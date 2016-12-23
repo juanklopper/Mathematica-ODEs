@@ -1,0 +1,409 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     11631,        401]
+NotebookOptionsPosition[      9962,        337]
+NotebookOutlinePosition[     10321,        353]
+CellTagsIndexPosition[     10278,        350]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Substitutions", "Title",
+ CellChangeTimes->{{3.691409980761907*^9, 3.691409985483356*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["In our toolbox", "Section",
+ CellChangeTimes->{{3.691410026219215*^9, 3.691410038137392*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+So far we can solve differential equations by observing that they are of one \
+of the following forms\
+\>", "Item",
+ CellChangeTimes->{{3.691410048282427*^9, 3.6914100715365753`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Separable", "Subitem",
+ CellChangeTimes->{{3.691410048282427*^9, 3.691410075855748*^9}}],
+
+Cell["Linear", "Subitem",
+ CellChangeTimes->{{3.691410048282427*^9, 3.6914100779456053`*^9}}],
+
+Cell["Exact", "Subitem",
+ CellChangeTimes->{{3.691410048282427*^9, 3.691410082319969*^9}}]
+}, Open  ]],
+
+Cell["\<\
+In this lesson we look at a new technique, using substitutions\
+\>", "Item",
+ CellChangeTimes->{{3.691410048282427*^9, 3.691410106055578*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Substitutions", "Section",
+ CellChangeTimes->{{3.691410110104947*^9, 3.691410113457171*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["The four substitutions are", "Item",
+ CellChangeTimes->{{3.691410127610729*^9, 3.691410133369385*^9}, {
+  3.691411377520379*^9, 3.691411379871203*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"y", "=", "ux"}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " for homogeneous DE\[CloseCurlyQuote]s"
+}], "Subitem",
+ CellChangeTimes->{{3.691410127610729*^9, 3.691410141337305*^9}, {
+  3.691410238044784*^9, 3.6914102414463673`*^9}, {3.691410593926229*^9, 
+  3.6914106011163073`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    FractionBox["dy", "dx"], "=", 
+    RowBox[{
+     RowBox[{"x", 
+      FractionBox["du", "dx"]}], "+", "u"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ Cell[BoxData[
+  FormBox[
+   FractionBox["dx", "dx"], TraditionalForm]],
+  FormatType->"TraditionalForm"]
+}], "Subsubitem",
+ CellChangeTimes->{{3.691410127610729*^9, 3.691410205153923*^9}}],
+
+Cell[TextData[Cell[BoxData[
+ FormBox[
+  RowBox[{"dy", "=", 
+   RowBox[{"xdu", "+", "udx"}]}], TraditionalForm]],
+ FormatType->"TraditionalForm"]], "Subsubitem",
+ CellChangeTimes->{{3.691410127610729*^9, 3.69141022186436*^9}, {
+  3.691410290339322*^9, 3.6914102923542223`*^9}}]
+}, Open  ]],
+
+Cell[TextData[{
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"x", "=", "vy"}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " for homogeneous DE\[CloseCurlyQuote]s"
+}], "Subitem",
+ CellChangeTimes->{{3.691410127610729*^9, 3.69141022186436*^9}, {
+  3.691410290339322*^9, 3.691410301628296*^9}, {3.691410606854432*^9, 
+  3.691410607039317*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ FormBox[
+  RowBox[{
+   FractionBox["dx", "dy"], "=", 
+   RowBox[{"v", "+", 
+    RowBox[{"y", 
+     FractionBox["dv", "dy"]}]}]}], TraditionalForm]],
+ FormatType->"TraditionalForm"]], "Subsubitem",
+ CellChangeTimes->{{3.691410127610729*^9, 3.69141022186436*^9}, {
+  3.691410290339322*^9, 3.691410339316721*^9}}],
+
+Cell[TextData[Cell[BoxData[
+ FormBox[
+  RowBox[{"dx", "=", 
+   RowBox[{"vdy", "+", "ydv"}]}], TraditionalForm]],
+ FormatType->"TraditionalForm"]], "Subsubitem",
+ CellChangeTimes->{{3.691410127610729*^9, 3.69141022186436*^9}, {
+  3.691410290339322*^9, 3.691410356093287*^9}}]
+}, Open  ]],
+
+Cell[TextData[{
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"u", "=", 
+    SuperscriptBox["y", 
+     RowBox[{"-", "1"}]]}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " for Bernoulli DE\[CloseCurlyQuote]s"
+}], "Subitem",
+ CellChangeTimes->{{3.691410127610729*^9, 3.69141022186436*^9}, {
+  3.691410290339322*^9, 3.69141036714847*^9}, {3.691410610189653*^9, 
+  3.6914106239793587`*^9}}],
+
+Cell[TextData[{
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"u", "=", 
+    RowBox[{"Ax", "+", "By", "+", "C"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " for DE\[CloseCurlyQuote]s of the form ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    FractionBox["dy", "dx"], "=", 
+    RowBox[{"f", "(", 
+     RowBox[{"Ax", "+", "By", "+", "C"}], ")"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm"]
+}], "Subitem",
+ CellChangeTimes->{{3.691410127610729*^9, 3.69141022186436*^9}, {
+  3.691410290339322*^9, 3.691410374574041*^9}, {3.691410632587953*^9, 
+  3.6914106325882673`*^9}, {3.6914113697693377`*^9, 3.691411407939899*^9}}]
+}, Open  ]],
+
+Cell["\<\
+To use the first two substitutions we define a homogeneous equation as\
+\>", "Item",
+ CellChangeTimes->{{3.691410127610729*^9, 3.69141022186436*^9}, {
+  3.691410290339322*^9, 3.691410374574041*^9}, {3.691410635317354*^9, 
+  3.691410661043442*^9}, {3.691411449457594*^9, 3.691411449457821*^9}}],
+
+Cell[TextData[{
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"f", "(", 
+     RowBox[{"tx", ",", "ty"}], ")"}], "=", 
+    RowBox[{
+     SuperscriptBox["t", "\[Alpha]"], 
+     RowBox[{"f", "(", 
+      RowBox[{"x", ",", "y"}], ")"}]}]}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ ", where ",
+ Cell[BoxData[
+  FormBox["\[Alpha]", TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " is a constant"
+}], "Subitem",
+ CellChangeTimes->{{3.691410127610729*^9, 3.69141022186436*^9}, {
+  3.691410290339322*^9, 3.691410374574041*^9}, {3.691410635317354*^9, 
+  3.691410661043442*^9}, {3.6914114529925423`*^9, 3.691411510191325*^9}, {
+  3.691411542433782*^9, 3.691411542434165*^9}}],
+
+Cell[TextData[{
+ "A Bernoulli equation has the form ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     FractionBox["dy", "dx"], "+", 
+     RowBox[{
+      RowBox[{"P", "(", "x", ")"}], "y"}]}], "=", 
+    RowBox[{
+     RowBox[{"f", "(", "x", ")"}], 
+     SuperscriptBox["y", "n"]}]}], TraditionalForm]],
+  FormatType->"TraditionalForm"]
+}], "Item",
+ CellChangeTimes->{{3.691410127610729*^9, 3.69141022186436*^9}, {
+  3.691410290339322*^9, 3.691410374574041*^9}, {3.691410635317354*^9, 
+  3.691410661043442*^9}, {3.6914114529925423`*^9, 3.691411510191325*^9}, {
+  3.691411543242935*^9, 3.691411574500989*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["YouTube example problems", "Section",
+ CellChangeTimes->{{3.6914116868616867`*^9, 3.6914116906095657`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Hyperlink", "[", 
+  "\"\<https://www.youtube.com/watch?v=_OYnk-tz7xw&index=24&list=\
+PLsu0TcgLDUiJF5u8tbcnyxjAFhqiSyGnJ\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.691411756844046*^9, 3.6914117667992373`*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  ButtonBox[
+   PaneSelectorBox[{
+    False->"\<\"https://www.youtube.com/watch?v=_OYnk-tz7xw&index=24&list=\
+PLsu0TcgLDUiJF5u8tbcnyxjAFhqiSyGnJ\"\>", True->
+    StyleBox["\<\"https://www.youtube.com/watch?v=_OYnk-tz7xw&index=24&list=\
+PLsu0TcgLDUiJF5u8tbcnyxjAFhqiSyGnJ\"\>", "HyperlinkActive"]}, Dynamic[
+     CurrentValue["MouseOver"]],
+    BaseStyle->{"Hyperlink"},
+    FrameMargins->0,
+    ImageSize->Automatic],
+   BaseStyle->"Hyperlink",
+   ButtonData->{
+     URL["https://www.youtube.com/watch?v=_OYnk-tz7xw&index=24&list=\
+PLsu0TcgLDUiJF5u8tbcnyxjAFhqiSyGnJ"], None},
+   ButtonNote->
+    "https://www.youtube.com/watch?v=_OYnk-tz7xw&index=24&list=\
+PLsu0TcgLDUiJF5u8tbcnyxjAFhqiSyGnJ"],
+  Annotation[#, 
+   "https://www.youtube.com/watch?v=_OYnk-tz7xw&index=24&list=\
+PLsu0TcgLDUiJF5u8tbcnyxjAFhqiSyGnJ", "Hyperlink"]& ]], "Output",
+ CellChangeTimes->{3.691411768642894*^9}]
+}, Open  ]],
+
+Cell[TextData[{
+ "Solve ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        SuperscriptBox["x", "2"], "+", 
+        SuperscriptBox["y", "2"]}], ")"}], "dx"}], "+", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        SuperscriptBox["x", "2"], "-", "xy"}], ")"}], "dy"}]}], "=", "0"}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm"]
+}], "Item",
+ CellChangeTimes->{{3.691411706729693*^9, 3.691411750894199*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"DSolve", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"y", "'"}], "[", "x", "]"}], "\[Equal]", 
+    RowBox[{"-", 
+     FractionBox[
+      RowBox[{
+       SuperscriptBox["x", "2"], "+", 
+       SuperscriptBox[
+        RowBox[{"y", "[", "x", "]"}], "2"]}], 
+      RowBox[{
+       SuperscriptBox["x", "2"], "-", 
+       RowBox[{"x", "*", 
+        RowBox[{"y", "[", "x", "]"}]}]}]]}]}], ",", 
+   RowBox[{"y", "[", "x", "]"}], ",", "x"}], "]"}]], "Input",
+ CellChangeTimes->{{3.6914127106625957`*^9, 3.691412795077986*^9}}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Solve","ifun",
+   "\"Inverse functions are being used by \
+\\!\\(\\*RowBox[{\\\"Solve\\\"}]\\), so some solutions may not be found; use \
+Reduce for complete solution information.\"",2,3,1,22776953130428953676,
+   "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.691412795723283*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"y", "[", "x", "]"}], "\[Rule]", 
+    RowBox[{
+     RowBox[{"-", "x"}], "-", 
+     RowBox[{"2", " ", "x", " ", 
+      RowBox[{"ProductLog", "[", 
+       RowBox[{"-", 
+        FractionBox[
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{
+           RowBox[{"-", 
+            FractionBox["1", "2"]}], "-", 
+           FractionBox[
+            RowBox[{"C", "[", "1", "]"}], "2"]}]], 
+         RowBox[{"2", " ", 
+          SqrtBox["x"]}]]}], "]"}]}]}]}], "}"}], "}"}]], "Output",
+ CellChangeTimes->{3.6914127957266817`*^9}]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1550, 1033},
+WindowMargins->{{4, Automatic}, {Automatic, 0}},
+FrontEndVersion->"11.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (September \
+21, 2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 96, 1, 92, "Title"],
+Cell[CellGroupData[{
+Cell[701, 27, 99, 1, 64, "Section"],
+Cell[CellGroupData[{
+Cell[825, 32, 193, 4, 30, "Item"],
+Cell[CellGroupData[{
+Cell[1043, 40, 94, 1, 26, "Subitem"],
+Cell[1140, 43, 93, 1, 26, "Subitem"],
+Cell[1236, 46, 90, 1, 26, "Subitem"]
+}, Open  ]],
+Cell[1341, 50, 152, 3, 30, "Item"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1542, 59, 98, 1, 64, "Section"],
+Cell[CellGroupData[{
+Cell[1665, 64, 157, 2, 30, "Item"],
+Cell[CellGroupData[{
+Cell[1847, 70, 348, 9, 26, "Subitem"],
+Cell[CellGroupData[{
+Cell[2220, 83, 410, 14, 33, "Subsubitem"],
+Cell[2633, 99, 276, 6, 25, "Subsubitem"]
+}, Open  ]],
+Cell[2924, 108, 343, 9, 26, "Subitem"],
+Cell[CellGroupData[{
+Cell[3292, 121, 339, 9, 34, "Subsubitem"],
+Cell[3634, 132, 274, 6, 25, "Subsubitem"]
+}, Open  ]],
+Cell[3923, 141, 388, 11, 27, "Subitem"],
+Cell[4314, 154, 630, 17, 34, "Subitem"]
+}, Open  ]],
+Cell[4959, 174, 303, 5, 30, "Item"],
+Cell[5265, 181, 688, 20, 26, "Subitem"],
+Cell[5956, 203, 614, 17, 37, "Item"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6619, 226, 113, 1, 64, "Section"],
+Cell[CellGroupData[{
+Cell[6757, 231, 234, 4, 32, "Input"],
+Cell[6994, 237, 906, 22, 34, "Output"]
+}, Open  ]],
+Cell[7915, 262, 484, 18, 32, "Item"],
+Cell[CellGroupData[{
+Cell[8424, 284, 552, 17, 56, "Input"],
+Cell[8979, 303, 338, 8, 24, "Message"],
+Cell[9320, 313, 602, 19, 114, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
